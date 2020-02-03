@@ -6,7 +6,7 @@
 
 with open('air.txt') as infile:
     for line in infile:
-        out = line.replace('\n', '').replace('.', '').replace(',','').replace(' ','')
+        out = line.replace('\n', '').replace('.', '').replace(',','').replace(' ','').replace(':', '')
         wordslist=out.split()
         # print(wordslist)
     
