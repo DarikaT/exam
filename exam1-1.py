@@ -18,7 +18,7 @@ def check_(str):
     return dict_
 
 print(check_(out))
-print("Max: " + max(set(out), key = out.count))
+
 
 
 
