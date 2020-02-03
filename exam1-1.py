@@ -5,16 +5,17 @@
 #  Поочередно выведите на экран ваш словарь и самый повторяющийся символ.
 
 with open('air.txt') as infile:
-    for line in infile:
-        out = line.replace('\n', '').replace('.', '').replace(',','').replace(' ','').replace(':', '')
-        wordslist=out.split()
-        # print(wordslist)
+    out = infile.read().replace('\n', '').replace('.', '').replace(',','').replace(' ','')
     
-        def check_(str):
-            dict_ = {}
-            for c in str:
-                dict_[c] = str.count(c)
-            return dict_
+def check_(str):
+    dict_ = {}
+    for c in str:
+        if c not in dict_:
+            dict_[c] = 1
+        dict_[c] += 1
+    maxing = max(dict_.values())
+    print(maxing)
+    return dict_
 
 print(check_(out))
 print("Max: " + max(set(out), key = out.count))
